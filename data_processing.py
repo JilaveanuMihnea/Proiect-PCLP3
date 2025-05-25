@@ -40,4 +40,4 @@ def processData():
 	# Salvam dataset-ul prelucrat
 	dfp.to_csv('dataset_processed.csv', index=False)
 
-processData()
+# processData()

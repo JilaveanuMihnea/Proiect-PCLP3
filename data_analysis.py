@@ -78,4 +78,4 @@ def analyseData():
 	plt.tight_layout()
 	plt.show()
 
-analyseData()
+# analyseData()

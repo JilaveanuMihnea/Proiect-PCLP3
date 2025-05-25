@@ -92,4 +92,4 @@ def compareModels():
 	plt.legend()
 	plt.show()
 
-compareModels()
+# compareModels()
