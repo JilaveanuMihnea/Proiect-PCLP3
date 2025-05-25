@@ -13,6 +13,15 @@ def processData():
 		np.nan, np.random.choice(dfp["nivel_stres"].dropna().unique(), p=dfp["nivel_stres"].value_counts(normalize=True))
 	)
 	dfp["ora_culcare"] = dfp["ora_culcare"].apply(lambda x: x + 24 if x < 20 else x)
+	
+	# Eliminam valorile anormale
+	dfp = dfp[dfp["cafea"] <= 3]
+	dfp = dfp[dfp["ore_ecran"] <= 9.7]
+	dfp = dfp[dfp["ore_ecran"] >= 0.3]
+	dfp = dfp[dfp["minute_sport"] <= 60]
+	dfp = dfp[dfp["minute_sport"] >= 5]
+	dfp = dfp[dfp["ora_culcare"] <= 27.5] # stergem orele mai tarzii de 3:30
+ 
 	meanVal = dfp.mean(numeric_only=True)
 	dfp = dfp.fillna(meanVal)
 	print("Missing values handled.")

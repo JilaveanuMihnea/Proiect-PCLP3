@@ -81,7 +81,7 @@ def compareModels():
 	plt.tight_layout()
 	plt.show()
 
-	# Visualizam distribuția erorilor pentru fiecare model
+	# Visualizam distributia erorilor pentru fiecare model
 	plt.figure(figsize=(12, 6))
 	sns.histplot(y_test - y_pred_lr, kde=True, color='blue', label='Linear Regression', stat='density')
 	sns.histplot(y_test - y_pred_rf, kde=True, color='green', label='Random Forest', stat='density')
